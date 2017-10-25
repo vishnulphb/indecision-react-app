@@ -1,12 +1,38 @@
 'use strict';
 
-var getFirstName = function getFirstName(x) {
-    return console.log('FirstName', x.split(' ')[0]);
+var add = function add(a, b) {
+    return a + b;
 };
 
-var getLastName = function getLastName(x) {
-    return console.log('LastName', x.split(' ')[1]);
+console.log(add(4, 4));
+
+var user = {
+    name: 'vishnu',
+    cities: ['raipur', 'chennai', 'Little Rock'],
+
+    message: function message() {
+        var _this = this;
+
+        return this.cities.map(function (city) {
+            return _this.name + ' has lived in ' + city;
+        });
+    }
+};
+console.log(user.message());
+
+//challenge
+
+var multiplier = {
+    numbers: [1, 2, 3, 4],
+    multiplyBy: 10,
+
+    newArray: function newArray() {
+        var _this2 = this;
+
+        return this.numbers.map(function (x) {
+            return _this2.multiplyBy * x;
+        });
+    }
 };
 
-getFirstName("Vishnu Pillai");
-getLastName("Vishnu Pillai");
+console.log(multiplier.newArray());
